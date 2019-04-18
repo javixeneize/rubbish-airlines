@@ -14,3 +14,6 @@ steps:
       pip install -r requirements.txt
     displayName: 'Install dependencies'
     condition: succeededOrFailed()
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish artifacts: drop'
