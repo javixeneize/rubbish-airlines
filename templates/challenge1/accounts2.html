@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Welcome to Vulnerbank</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="/static/challenge1/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/challenge1/assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/static/challenge1/assets/css/form-elements.css">
+        <link rel="stylesheet" href="/static/challenge1/assets/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="/static/challenge1/assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/challenge1/assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/challenge1/assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/challenge1/assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="/static/challenge1/assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+    {% block body %}
+  
+          
+            
+        <!-- Top content -->
+        <div class="top-content">
+        <div class="col-sm-8 col-sm-offset-2 text">
+         
+            </div>
+            <div class="inner-bg">
+                <div class="container">
+
+                     <div class="row">
+                     <div class="col-md-6 text">
+                    <h2><p class="text">Account</p></h2>
+                    </div>
+                     <div class="col-md-4 text">
+                    <h2><p class="text">Balance</p></h2>
+                    </div>
+                    </div> 
+                    {% for i in range(l|length) %}
+                    <div class="row">
+                    <div class="col-md-6 text">
+
+                       
+                        <h3><p class="text">{{l[i][0]}}</p></h3>                 
+                    </div>
+                    {% for j in range(l[i]|length) %}
+                        {% if j>0 %}
+                    <div class="col-md-4 text">
+                        
+                          <h3><p class="text">{{l[i][j]}}</p></h3>                        
+                        </div>
+                        {%endif%}
+                     {%endfor%}
+                    </div>
+                     {%endfor%}
+                    </div>
+               
+                
+
+                  
+               
+                 <div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h2>Can't find your account? Search here</h2>
+            <div id="custom-search-input">
+                <div class="input-group col-md-8 col-sm-offset-2">
+                 <form action="{{ url_for('search') }}" method="post">
+                    <input type="text" name="acc" class="form-control input-lg" autocomplete="off" placeholder="Account number..." />
+                   <input type=submit value=Search>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+    </div>
+</div>
+       </div>
+             </div>
+            
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="/static/challenge1/assets/js/jquery-1.11.1.min.js"></script>
+        <script src="/static/challenge1/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/static/challenge1/assets/js/jquery.backstretch.min.js"></script>
+        <script src="/static/challenge1/assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    {% endblock %}
+
+</html>
